@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Interactivo - Innovatech Creations</title>
+    <title>Catálogo Interactivo - Escuela para el Emprendimiento</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -11,57 +11,18 @@
             --transition-speed: 0.8s;
             --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* --- ESTILOS GENERALES Y LAYOUT PRINCIPAL --- */
-        html {
-            scroll-behavior: smooth; /* Habilita el scroll suave nativo */
-        }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background: linear-gradient(-45deg, #4f399b, #7653d9, #6a5acd, #483d8b);
-            background-size: 400% 400%;
-            animation: waveAnimation 18s ease infinite;
-            transition: padding-top var(--transition-speed) var(--transition-curve);
-        }
-
-        @keyframes waveAnimation {
-            0% { background-position: 50% 0%; }
-            50% { background-position: 50% 100%; }
-            100% { background-position: 50% 0%; }
-        }
-
-        /* Contenedor principal que centra el contenido inicial */
-        .page-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: justify-content var(--transition-speed) var(--transition-curve), min-height var(--transition-speed) var(--transition-curve);
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; color: white; min-height: 100vh; overflow-x: hidden; background: linear-gradient(-45deg, #4f399b, #7653d9, #6a5acd, #483d8b); background-size: 400% 400%; animation: waveAnimation 18s ease infinite; }
+        @keyframes waveAnimation { 0% { background-position: 50% 0%; } 50% { background-position: 50% 100%; } 100% { background-position: 50% 0%; } }
         
-        body.products-visible .page-wrapper {
-            min-height: auto;
-            justify-content: flex-start;
-            padding-top: 5vh;
-        }
+        .page-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; width: 100%; padding: 20px; box-sizing: border-box; transition: justify-content var(--transition-speed) var(--transition-curve), min-height var(--transition-speed) var(--transition-curve), padding-top var(--transition-speed) var(--transition-curve); }
+        body.products-visible .page-wrapper { min-height: auto; justify-content: flex-start; padding-top: 5vh; }
 
-        .header-catalogo {
-            text-align: center;
-        }
-
+        .header-catalogo { text-align: center; }
         .header-catalogo .empresa { font-size: clamp(2em, 5vw, 2.8em); font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin: 0; }
         .header-catalogo .subtitulo { font-size: clamp(1em, 2vw, 1.2em); font-weight: 300; max-width: 600px; margin: 5px auto 0 auto; }
         
-        /* --- CONTROLES Y EMOJIS DE PREVISUALIZACIÓN --- */
         .controls { margin-top: 30px; }
         .control-btn { font-family: 'Poppins', sans-serif; font-size: 1.1em; font-weight: 600; padding: 15px 30px; border-radius: 50px; border: 2px solid white; background-color: transparent; color: white; cursor: pointer; transition: all 0.3s ease; }
         .control-btn:hover { background-color: white; color: #6a5acd; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
@@ -69,46 +30,19 @@
         body.products-visible #viewProductsBtn { display: none; }
         body.products-visible #hideProductsBtn { display: inline-block; }
 
-        .emoji-preview {
-            display: flex;
-            gap: 40px;
-            margin-top: 50px;
-            transition: opacity 0.5s, transform 0.5s;
-        }
-        
-        body.products-visible .emoji-preview {
-            opacity: 0;
-            transform: scale(0.8);
-            pointer-events: none;
-        }
-        
-        .emoji-link {
-            font-size: clamp(2.5em, 6vw, 4em);
-            text-decoration: none;
-            color: white;
-            transition: transform 0.3s ease;
-            animation: float 4s ease-in-out infinite;
-        }
+        .emoji-preview { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px 40px; margin-top: 50px; transition: opacity 0.5s, transform 0.5s; max-width: 550px; }
+        body.products-visible .emoji-preview { opacity: 0; transform: scale(0.8); pointer-events: none; }
+        .emoji-link { font-size: clamp(2.5em, 6vw, 3.5em); text-decoration: none; color: white; transition: transform 0.3s ease; animation: float 4s ease-in-out infinite; }
         .emoji-link:hover { transform: scale(1.2) !important; animation-play-state: paused; }
-        .emoji-link:nth-child(2) { animation-delay: -1s; }
-        .emoji-link:nth-child(3) { animation-delay: -2s; }
-        .emoji-link:nth-child(4) { animation-delay: -3s; }
+        .emoji-link:nth-child(1) { animation-delay: -0.5s; } .emoji-link:nth-child(2) { animation-delay: -1.5s; } .emoji-link:nth-child(3) { animation-delay: -2.5s; } .emoji-link:nth-child(4) { animation-delay: -3.5s; } .emoji-link:nth-child(5) { animation-delay: -0.8s; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* --- CATÁLOGO DE PRODUCTOS --- */
-        .catalogo-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; max-width: 1400px; margin-top: 40px; padding: 0 20px; box-sizing: border-box; }
-        .flip-card { width: 300px; height: 420px; perspective: 1200px; opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s, scale 0.3s; pointer-events: none; }
-        body.products-visible .flip-card { opacity: 1; transform: translateY(0); pointer-events: auto; }
-        body.products-visible .flip-card:nth-child(1) { transition-delay: 0.1s; }
-        body.products-visible .flip-card:nth-child(2) { transition-delay: 0.2s; }
-        body.products-visible .flip-card:nth-child(3) { transition-delay: 0.3s; }
-        body.products-visible .flip-card:nth-child(4) { transition-delay: 0.4s; }
-
-        /* Estilos de volteo */
+        /* CORRECCIÓN: El catálogo se expande justo debajo de los controles */
+        .catalogo-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 100%; max-width: 1400px; padding: 0 20px; box-sizing: border-box; overflow: hidden; max-height: 0; opacity: 0; transition: max-height var(--transition-speed) ease-in-out, opacity 0.6s ease-out, margin-top 0.6s ease-out; }
+        body.products-visible .catalogo-container { max-height: 4000px; /* Suficientemente grande para todos los productos */ opacity: 1; margin-top: 40px; }
+        
+        .flip-card { width: 300px; height: 420px; perspective: 1200px; transition: box-shadow 0.3s, transform 0.3s; }
+        
         .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; box-shadow: 0 8px 30px rgba(0,0,0,0.2); border-radius: 18px; }
         .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
         .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 18px; overflow: hidden; }
@@ -119,14 +53,13 @@
         .flip-card-back p { font-size: 1em; line-height: 1.6; margin-bottom: auto; }
         .flip-card-back .precio { font-size: 1.6em; font-weight: 700; margin-top: 20px; padding: 12px 25px; background-color: #50e3c2; color: #1a253c; border-radius: 50px; }
         .flip-card-back .precio.consultar { background-color: #f39c12; font-size: 1.3em; }
-
     </style>
 </head>
 <body>
 
     <div class="page-wrapper">
         <header class="header-catalogo">
-            <h1 class="empresa">Escuela para el Emprendimiento Menca de Leoni </h1>
+            <h1 class="empresa">Escuela para el Emprendimiento Menca de Leoni</h1>
             <p class="subtitulo">Nuestro Catálogo Exclusivo: Descubre la tecnología que redefine tu día a día.</p>
         </header>
 
@@ -136,68 +69,58 @@
         </div>
 
         <div class="emoji-preview">
-            <a href="#product-1" class="emoji-link" title="Ir al Reloj">⌚️</a>
-            <a href="#product-2" class="emoji-link" title="Ir al Teclado">⌨️</a>
-            <a href="#product-3" class="emoji-link" title="Ir al Casco VR">🕶️</a>
-            <a href="#product-4" class="emoji-link" title="Ir al Libro">📚</a>
+            <!-- CORRECCIÓN: Solo la segunda fila de 5 emojis es visible -->
+            <a href="#product-7" class="emoji-link" title="Ir al Vestido">👗</a>
+            <a href="#product-8" class="emoji-link" title="Ir al Accesorio">💎</a>
+            <a href="#product-9" class="emoji-link" title="Ir al Cuadro">🖼️</a>
+            <a href="#product-10" class="emoji-link" title="Ir a la Blusa">👚</a>
+            <a href="#product-11" class="emoji-link" title="Ir al Bolso">👜</a>
+        </div>
+        
+        <div class="catalogo-container">
+            <!-- RESTAURADOS: Los 11 productos están aquí -->
+            <div class="flip-card" id="product-1"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.postimg.cc/HWv1NGB0/2-minutos.png" alt="Reloj"></div><div class="flip-card-back"><h3>Reloj de Pulsera</h3><p>Reloj importado, con correa de cuero, elegante y ergonómico.</p><div class="precio">$49.99</div></div></div></div>
+            <div class="flip-card" id="product-2"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/03/12/15524087654514.jpg" alt="Teclado"></div><div class="flip-card-back"><h3>Teclado Inteligente</h3><p>Teclado con atajos inteligentes para trabajar en la web.</p><div class="precio">$89.99</div></div></div></div>
+            <div class="flip-card" id="product-3"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QI983nVxGBigNEe6t0kvomZ5ebzbjwCC6A&s" alt="Casco VR"></div><div class="flip-card-back"><h3>Realidad Aumentada</h3><p>Casco para inmersión profunda en el metaverso y juegos interactivos.</p><div class="precio consultar">Consultar Precio</div></div></div></div>
+            <div class="flip-card" id="product-4"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://th.bing.com/th/id/R.7718cb463c4881c75bc8222cc3f012c2?rik=rFcKqqUzk3dcAA&pid=ImgRaw&r=0" alt="Libro"></div><div class="flip-card-back"><h3>Libro de Historietas</h3><p>Historias fabuladas para niños de 5 a 7 años.</p><div class="precio">$89.99</div></div></div></div>
+            <div class="flip-card" id="product-5"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkKfJfGh8t1TmIvg5dj4K6iJT9URvzy_D26Q&s" alt="Logo"></div><div class="flip-card-back"><h3>Logo para paginas web</h3><p>Logo minimalista y adaptable a pedido</p><div class="precio">$89.99</div></div></div></div>
+            <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.postimg.cc/65HN487N/sesgo-de-confirmaci-n.png" alt="Espejo"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
+            <div class="flip-card" id="product-7"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.pinimg.com/474x/0c/71/6e/0c716e944e67d4d246df0926179f4ca9.jpg" alt="Vestido"></div><div class="flip-card-back"><h3>Vestido de Gala</h3><p>Diseño exclusivo para ocasiones especiales.</p><div class="precio">$129.99</div></div></div></div>
+            <div class="flip-card" id="product-8"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwFx4HrfKMOlei7SSgatWva7XwnyRiDd13O8-qPP5WQqI4fMootg_lpcdIhIUU8oEhp98&usqp=CAU" alt="Accesorio"></div><div class="flip-card-back"><h3>Accesorio Brillante</h3><p>El toque final perfecto para tu atuendo.</p><div class="precio">$39.99</div></div></div></div>
+            <div class="flip-card" id="product-9"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9xpRZMl0SbB_AOlecUx1YXS3rQTE5I44aA&s" alt="Cuadro"></div><div class="flip-card-back"><h3>Cuadro Abstracto</h3><p>Arte moderno para decorar tus espacios.</p><div class="precio">$199.99</div></div></div></div>
+            <div class="flip-card" id="product-10"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://tse4.mm.bing.net/th/id/OIP.t3RMAoQ-yfn7kpw7_BBenQHaLH?r=0&pid=ImgDet&w=185&h=277&c=7&o=7&rm=3" alt="Blusa"></div><div class="flip-card-back"><h3>Blusa Elegante</h3><p>Versatilidad y estilo para tu día a día.</p><div class="precio">$59.99</div></div></div></div>
+            <div class="flip-card" id="product-11"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://www.okchicas.com/wp-content/uploads/2020/07/Bolso-10.png"alt="Bolso"></div><div class="flip-card-back"><h3>Bolso de Diseño</h3><p>Práctico, espacioso y lleno de estilo.</p><div class="precio">$79.99</div></div></div></div>
         </div>
     </div>
 
-    <div class="catalogo-container">
-        <!-- Añadimos IDs para que los enlaces de los emojis funcionen -->
-        <div class="flip-card" id="product-1"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.postimg.cc/HWv1NGB0/2-minutos.png" alt="Reloj"></div><div class="flip-card-back"><h3>Reloj de Pulsera</h3><p>Reloj importado, con correa de cuero, elegante y ergonómico.</p><div class="precio">$49.99</div></div></div></div>
-        <div class="flip-card" id="product-2"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/03/12/15524087654514.jpg" alt="Teclado"></div><div class="flip-card-back"><h3>Teclado Inteligente</h3><p>Teclado con atajos inteligentes para trabajar en la web.</p><div class="precio">$89.99</div></div></div></div>
-        <div class="flip-card" id="product-3"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7QI983nVxGBigNEe6t0kvomZ5ebzbjwCC6A&s" alt="Casco VR"></div><div class="flip-card-back"><h3>Realidad Aumentada</h3><p>Casco para inmersión profunda en el metaverso y juegos interactivos.</p><div class="precio consultar">Consultar Precio</div></div></div></div>
-        <div class="flip-card" id="product-4"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk1WR4MYrEQs1su22oma5P7Md2l3kSFy0deA&s" alt="Libro"></div><div class="flip-card-back"><h3>Libro de Historietas</h3><p>Historias fabuladas para niños de 5 a 7 años.</p><div class="precio">$89.99</div></div></div></div>
-          <div class="flip-card" id="product-5"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkKfJfGh8t1TmIvg5dj4K6iJT9URvzy_D26Q&s" alt="Libro"></div><div class="flip-card-back"><h3>Logo para paginas web</h3><p>logo minimalista y adaptable a pedido</p><div class="precio">$89.99</div></div></div></div>
-        <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.postimg.cc/65HN487N/sesgo-de-confirmaci-n.png" alt="Libro"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
-        <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://i.pinimg.com/474x/0c/71/6e/0c716e944e67d4d246df0926179f4ca9.jpg" alt="Libro"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
-         <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwFx4HrfKMOlei7SSgatWva7XwnyRiDd13O8-qPP5WQqI4fMootg_lpcdIhIUU8oEhp98&usqp=CAU" alt="Libro"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
-          <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9xpRZMl0SbB_AOlecUx1YXS3rQTE5I44aA&s" alt="Libro"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
-         <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://tse4.mm.bing.net/th/id/OIP.t3RMAoQ-yfn7kpw7_BBenQHaLH?r=0&pid=ImgDet&w=185&h=277&c=7&o=7&rm=3" alt="Libro"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
-    <div class="flip-card" id="product-6"><div class="flip-card-inner"><div class="flip-card-front"><img src="https://www.okchicas.com/wp-content/uploads/2020/07/Bolso-10.png"alt="Libro"></div><div class="flip-card-back"><h3>Espejo magico</h3><p>Espejo magico para verte como quieres</p><div class="precio">$89.99</div></div></div></div>
-    </div>
     <script>
         const bodyEl = document.body;
         const viewBtn = document.getElementById('viewProductsBtn');
         const hideBtn = document.getElementById('hideProductsBtn');
         const emojiLinks = document.querySelectorAll('.emoji-link');
 
-        function showProducts() {
-            if (!bodyEl.classList.contains('products-visible')) {
-                bodyEl.classList.add('products-visible');
-            }
-        }
-        
-        function hideProducts() {
-            bodyEl.classList.remove('products-visible');
-        }
+        function showProducts() { if (!bodyEl.classList.contains('products-visible')) { bodyEl.classList.add('products-visible'); } }
+        function hideProducts() { bodyEl.classList.remove('products-visible'); }
 
         viewBtn.addEventListener('click', showProducts);
         hideBtn.addEventListener('click', hideProducts);
         
         emojiLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevenimos el salto brusco del enlace
-                
+                e.preventDefault(); 
                 showProducts();
-                
                 const targetId = link.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
                 if (targetElement) {
-                    // Esperamos a que la animación de despliegue termine antes de hacer scroll
                     setTimeout(() => {
                         targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        
-                        // Añadimos un pequeño resalte al producto seleccionado
                         targetElement.style.boxShadow = '0 0 35px #50e3c2';
                         targetElement.style.transform = 'scale(1.03)';
                         setTimeout(() => {
                            targetElement.style.boxShadow = '';
                            targetElement.style.transform = '';
-                        }, 1800); // Quitamos el resalte después de un momento
-                    }, 500); // Este tiempo debe ser igual o mayor al delay de la última tarjeta
+                        }, 1800);
+                    }, 900);
                 }
             });
         });
