@@ -199,7 +199,15 @@
             .controls { flex-direction: column; gap: 10px; align-items: center; }
             .search-box { width: 100%; justify-content: center; }
             #searchInput { width: 80%; max-width: 300px; }
-            footer { flex-direction: column; gap: 15px; text-align: center; }
+            footer { flex-direction: column; gap: 8px; padding: 12px 15px; text-align: center; }
+            footer .contacto-whatsapp,
+            footer .contacto-email {
+                width: 100%;
+                display: block;
+                text-align: center;
+                white-space: nowrap;
+            }
+            footer .contacto-email { font-size: 0.95rem; }
             #scrollTopBtn { bottom: 20px; right: 20px; width: 45px; height: 45px; font-size: 16px; }
         }
     </style>
@@ -231,79 +239,115 @@
             </div>
         </div>
 
-        <div class="category-labels">
-            <span class="category-label" data-category="Decoración"><span class="emoji">🏠</span> Decoración</span>
-            <span class="category-label" data-category="Juguetes"><span class="emoji">🧸</span> Juguetes</span>
-            <span class="category-label" data-category="Oficina"><span class="emoji">🗂️</span> Oficina</span>
-            <span class="category-label" data-category="Arte"><span class="emoji">🎨</span> Arte</span>
-        </div>
+        <div class="category-labels"><div class="category-label" data-category="Tecnologia"><span class="emoji">💻</span><span>Tecnologia</span></div>
+<div class="category-label" data-category="Damas"><span class="emoji">👗</span><span>Damas</span></div>
+<div class="category-label" data-category="Decoracion"><span class="emoji">📦</span><span>Decoracion</span></div>
+<div class="category-label" data-category="Caballeros"><span class="emoji">👔</span><span>Caballeros</span></div>
+<div class="category-label" data-category="Navideños"><span class="emoji">🎄</span><span>Navideños</span></div>
+<div class="category-label" data-category="Perfumes"><span class="emoji">🌺</span><span>Perfumes</span></div>
+<div class="category-label" data-category="Higiene"><span class="emoji">🧼</span><span>Higiene</span></div>
+</div>
 
         <div class="catalogo-container">
-            <div class="flip-card" id="product-1" data-category="Decoración">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://img.magnific.com/vector-gratis/nina-feliz-mariposa_1450-103.jpg" alt="Niña y Mariposa">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Niña y Mariposa</h3>
-                        <p>Categoría: Decoración</p>
-                        <div class="precio">$25.00</div>
-                    </div>
-                </div>
-            </div>
+<div class="flip-card" id="product-1" data-category="Tecnologia">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/KcsktSxm/Bluetooh-USB-5-0-120928-edit-14805995505574.png" alt="Bluetooh USB para pc"></div>
+<div class="flip-card-back">
+<h3>Bluetooh USB para pc</h3>
+<p>Categoría: Tecnologia</p>
+<div class="precio">$5</div>
+</div></div></div>
 
-            <div class="flip-card" id="product-2" data-category="Decoración">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://cdn.pixabay.com/photo/2018/07/09/17/44/baby-elephant-3526681_1280.png" alt="Elefantito">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Elefantito</h3>
-                        <p>Categoría: Decoración</p>
-                        <div class="precio">$15.00</div>
-                    </div>
-                </div>
-            </div>
+<div class="flip-card" id="product-2" data-category="Damas">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/J7508fvM/Pantalon-dama-jean-negro.png" alt="Pantalon Negro Dama"></div>
+<div class="flip-card-back">
+<h3>Pantalon Negro Dama</h3>
+<p>Categoría: Damas</p>
+<div class="precio">$8</div>
+</div></div></div>
 
-            <div class="flip-card" id="product-3" data-category="Juguetes">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSit7edpIYGrZsFcZv46aELpFnauh-vZHLs6g&s" alt="Peluches Suaves">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Peluches Suaves</h3>
-                        <p>Categoría: Juguetes</p>
-                        <div class="precio">$40.00</div>
-                    </div>
-                </div>
-            </div>
+<div class="flip-card" id="product-3" data-category="Decoracion">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/vmpmr7YG/Angelito-navideno.png" alt="Angelito de Foami"></div>
+<div class="flip-card-back">
+<h3>Angelito de Foami</h3>
+<p>Categoría: Decoracion</p>
+<div class="precio">$2</div>
+</div></div></div>
 
-            <div class="flip-card" id="product-4" data-category="Oficina">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3yDUhCq-MP_sryoShSD2plJkXfGs9H7iRlQ&s" alt="Peluches Suaves">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Peluches Suaves</h3>
-                        <p>Categoría: Oficina</p>
-                        <div class="precio">$65.00</div>
-                    </div>
-                </div>
-            </div>
+<div class="flip-card" id="product-4" data-category="Caballeros">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/YSJS6Nr9/Boxer-de-Caballero-CK.png" alt="Boxer Varias Tallas"></div>
+<div class="flip-card-back">
+<h3>Boxer Varias Tallas</h3>
+<p>Categoría: Caballeros</p>
+<div class="precio">$5</div>
+</div></div></div>
 
-            <div class="flip-card" id="product-5" data-category="Arte">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="https://cdn.pixabay.com/photo/2016/04/01/08/29/animals-1298747_1280.png" alt="Peluches Suaves">
-                    </div>
-                    <div class="flip-card-back">
-                        <h3>Peluches Suaves</h3>
-                        <p>Categoría: Arte</p>
-                        <div class="precio">$35.00</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="flip-card" id="product-5" data-category="Navideños">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/SKwK6LSq/cintillo-navideno.jpg" alt="Reno Navideño"></div>
+<div class="flip-card-back">
+<h3>Reno Navideño</h3>
+<p>Categoría: Navideños</p>
+<div class="precio">$3</div>
+</div></div></div>
+
+<div class="flip-card" id="product-6" data-category="Navideños">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/nLsz9SJV/cintillo-navideno-santa.jpg" alt="Santa de Foami"></div>
+<div class="flip-card-back">
+<h3>Santa de Foami</h3>
+<p>Categoría: Navideños</p>
+<div class="precio">$3</div>
+</div></div></div>
+
+<div class="flip-card" id="product-7" data-category="Navideños">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/j5PSZW2N/cotillon-naavideno.png" alt="Gorro Santa"></div>
+<div class="flip-card-back">
+<h3>Gorro Santa</h3>
+<p>Categoría: Navideños</p>
+<div class="precio">$3</div>
+</div></div></div>
+
+<div class="flip-card" id="product-8" data-category="Perfumes">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/rsTFb8Rb/perfume-caballeros.png" alt="Perfumes 100 ml"></div>
+<div class="flip-card-back">
+<h3>Perfumes 100 ml</h3>
+<p>Categoría: Perfumes</p>
+<div class="precio">$5</div>
+</div></div></div>
+
+<div class="flip-card" id="product-9" data-category="Higiene">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/6qK5S9Gx/razuradora-electrica.png" alt="Afeitadora Electrica"></div>
+<div class="flip-card-back">
+<h3>Afeitadora Electrica</h3>
+<p>Categoría: Higiene</p>
+<div class="precio">$5</div>
+</div></div></div>
+
+<div class="flip-card" id="product-10" data-category="Navideños">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/PJHrct8X/Santa-parado.jpg" alt="Santa Parado"></div>
+<div class="flip-card-back">
+<h3>Santa Parado</h3>
+<p>Categoría: Navideños</p>
+<div class="precio">$5</div>
+</div></div></div>
+
+<div class="flip-card" id="product-11" data-category="Navideños">
+<div class="flip-card-inner">
+<div class="flip-card-front"><img src="https://i.postimg.cc/GtjhnZk7/velas-navidenas.png" alt="Velas Navideñas"></div>
+<div class="flip-card-back">
+<h3>Velas Navideñas</h3>
+<p>Categoría: Navideños</p>
+<div class="precio">$3</div>
+</div></div></div>
+</div>
     </div>
 
     <footer>
@@ -398,6 +442,3 @@
     </script>
 </body>
 </html>
-
-              
-                   
